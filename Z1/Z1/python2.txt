@@ -1,0 +1,44 @@
+ 1.
+ liczby = range(0,20)
+kwadraty = [x**2 for x in liczby]
+print(kwadraty)
+
+2.
+
+def f1(n):
+  def f2(x):
+    return n-x
+  return f2
+  
+res = f1(5)
+print (res(10))
+
+
+3. 
+/Python pozwala zdefiniowac jednolinijkowe mini funckcje
+
+kwadrat = lambda x: x*x
+print (kwadrat(2))
+
+4.
+Generator jest to pewnego rodzaju funkcja ktora moze byc wstrzymana.
+
+def generator(n):
+  while n:
+    print(n)
+    n-=1
+    
+generator(5)
+
+yield zatrzymuje funkcje
+
+def generator(n):
+  print("Start")
+  while n:
+    print("Generator stop %d" % n)
+    yield n
+    print("Generator start %d" % n)
+    n-=1
+    
+for x in generator(5):
+  print ("Wywolanie %d" % x)
